@@ -54,6 +54,8 @@ class SheetLocalizationGenerator
     );
     final builder = DartLocalizationBuilder(
       jsonParser: jsonSerializers ?? true,
+      copyWith: jsonSerializers ?? true,
+      equalityComparer: jsonSerializers ?? true,
     );
     final code = StringBuffer();
     code.writeln(builder.build(localizations));
