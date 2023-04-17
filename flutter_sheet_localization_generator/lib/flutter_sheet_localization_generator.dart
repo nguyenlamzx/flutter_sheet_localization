@@ -46,12 +46,15 @@ class SheetLocalizationGenerator
     final name = '${element.name.replaceAll('Delegate', '')}Data';
     final docId = annotation.objectValue.getField('docId')!.toStringValue();
     final sheetId = annotation.objectValue.getField('sheetId')!.toStringValue();
+    final jsonSerializers = annotation.objectValue.getField('jsonSerializers')!.toBoolValue();
     var localizations = await _downloadGoogleSheet(
       docId!,
       sheetId!,
       name,
     );
-    final builder = DartLocalizationBuilder();
+    final builder = DartLocalizationBuilder(
+      jsonParser: jsonSerializers ?? true,
+    );
     final code = StringBuffer();
     code.writeln(builder.build(localizations));
     return code.toString();

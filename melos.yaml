@@ -1,0 +1,59 @@
+name: flux
+
+packages:
+  - '*'
+  - 'flutter_sheet_localization_generator/example'
+
+# ignore:
+#   - "mobile_services"
+
+# sdkPath: .fvm/flutter_sdk
+
+ide:
+  intellij:
+    false
+
+command:
+  version:
+    # Generate commit links in package changelogs.
+    linkToCommits: false
+    updateGitTagRefs: true
+    # # Only allow versioning to happen on main branch.
+    # branch: master
+    # Additionally build a changelog at the root of the workspace.
+    workspaceChangelog: true
+
+  bootstrap:
+    # It seems so that running "pub get" in parallel has some issues (like
+    # https://github.com/dart-lang/pub/issues/3404). Disabling this feature
+    # makes the CI much more stable.
+    runPubGetInParallel: true
+
+    # Recommended option for projects with Dart 2.17.0 or greater.
+    #
+    # This enables a new mechanism for linking local packages, which integrates
+    # better with other tooling (e.g. dart tool, flutter tool, IDE plugins) than the
+    # mechanism currently being used by default. Please read the documentation for
+    # usePubspecOverrides before enabling this feature. 
+    #
+    # See https://melos.invertase.dev/getting-started#setup
+    # usePubspecOverrides: true
+
+### globalPackagesUsed:
+###   - dart pub global activate coverage
+
+scripts:
+
+  # postbootstrap: |
+  #   flutter pub get
+
+
+  format:
+    run: melos exec -- "flutter format . --set-exit-if-changed"
+    description: Run `flutter format .` in all packages
+
+  intl:
+    run: flutter packages pub run build_runner build --delete-conflicting-outputs
+    packageFilters:
+      scope:
+        - example 

@@ -14,11 +14,15 @@ class DartLocalizationBuilder {
   DartLocalizationBuilder({
     this.nullSafety = true,
     this.jsonParser = true,
+    this.copyWith = true,
+    this.equalityComparer = true,
   });
 
   StringBuffer _buffer = StringBuffer();
   final bool nullSafety;
   final bool jsonParser;
+  final bool copyWith;
+  final bool equalityComparer;
 
   String buildImports() {
     return '''
@@ -273,6 +277,8 @@ import 'package:template_string/template_string.dart';
       result.build(
         nullSafety: nullSafety,
         jsonParser: jsonParser,
+        copyWith: copyWith,
+        equalityComparer: equalityComparer,
       ),
     );
 
