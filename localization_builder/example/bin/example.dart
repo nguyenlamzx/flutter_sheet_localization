@@ -12,7 +12,11 @@ Future<void> main() async {
   Logger.root.onRecord.listen((record) {
     print('${record.level.name}: ${record.time}: ${record.message}');
   });
-  final builder = DartLocalizationBuilder();
+  final builder = DartLocalizationBuilder(
+    jsonParser: false,
+    copyWith: false,
+    equalityComparer: false,
+  );
 
   // YAML
   final parser = YamlLocalizationParser();
