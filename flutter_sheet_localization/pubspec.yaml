@@ -3,9 +3,18 @@ description: Annotations for the flutter_sheet_localization_generator package.
 version: 5.1.1
 homepage: https://github.com/aloisdeniel/flutter_sheet_localization
 
+publish_to: none
+
 environment:
-  sdk: '>=2.12.0 <3.0.0'
+  sdk: '>=2.12.0 <4.0.0'
 
 dependencies:
-  intl: ^0.17.0
-  template_string: ^0.6.0
+  intl: ^0.18.0
+  # template_string: ^0.6.0
+
+  template_string:
+    path: ../template_string
+
+dev_dependencies:
+  
+  flutter_lints: ^2.0.0
