@@ -12,15 +12,21 @@ environment:
 dependencies:
   flutter:
     sdk: flutter 
-  # template_string: ^0.6.0
-  template_string:
-    path: ../template_string
   recase: ^4.0.0
   yaml: ^3.1.0
   equatable: ^2.0.0
   collection: ^1.15.0
   dart_style: ^2.0.0
   logging: ^1.0.0
+
+  # template_string: ^0.6.0
+  template_string:
+    git:
+      url: https://github.com/nguyenlamzx/flutter_sheet_localization
+      path: template_string
+      ref: 4c5c20a456ab17e97f6d19cc1ec0602f0fb0ced8
+  # template_string:
+  #   path: ../template_string
 
 dev_dependencies:
   flutter_lints: ^2.0.0

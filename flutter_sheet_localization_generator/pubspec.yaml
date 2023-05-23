@@ -19,16 +19,28 @@ dependencies:
   code_builder: ^4.0.0
   dart_style: ^2.0.0 
   source_gen: ^1.0.0
-  # flutter_sheet_localization: ^5.1.1
-  flutter_sheet_localization:
-    path: ../flutter_sheet_localization
   build: ^2.0.0
   analyzer: ^5.12.0
   collection: ^1.15.0
   intl: ^0.18.0
+
+  # flutter_sheet_localization: ^5.1.1
+  flutter_sheet_localization:
+    git:
+      url: https://github.com/nguyenlamzx/flutter_sheet_localization
+      path: flutter_sheet_localization
+      ref: 4c5c20a456ab17e97f6d19cc1ec0602f0fb0ced8
+  # flutter_sheet_localization:
+  #   path: ../flutter_sheet_localization
+
   # localization_builder: ^0.15.7
   localization_builder:
-    path: ../localization_builder
+    git:
+      url: https://github.com/nguyenlamzx/flutter_sheet_localization
+      path: localization_builder
+      ref: 4c5c20a456ab17e97f6d19cc1ec0602f0fb0ced8
+  # localization_builder:
+  #   path: ../localization_builder
 
 # dependency_overrides:
 #   analyzer: '>=4.4.0 <6.0.0'
